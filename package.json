@@ -1,0 +1,19 @@
+{
+  "name": "bullet-pattern-generator",
+  "version": "1.0.0",
+  "description": "This is a recreation in TS of the bullet trajectory module I had created as a part in my A Level NEA, with newly added and experimental patterns and modes to extend what I had in my 2D shooter game - originally (and admittedly still) inspired by the likes of Touhou Project and Undertale. I had decided to rework this specific aspect of the NEA due to seeing Christ Church at Oxford University's \"Can computers be used to create art?\" challenge.",
+  "main": "main.js",
+  "scripts": {
+    "compile": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "commonjs": "^0.0.1"
+  }
+}

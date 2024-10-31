@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bullet Pattern Generator</title>
+        <link rel="stylesheet" href="styles.css">
+
+        <div class="image-containers" style="display:none;">
+            <img src="./assets/player.png" id="player" height="33" width="17">
+            <img src="./assets/Frederick.png" id="enemy" height="50" width="37">
+            <img src="./assets/bullet.png" id="bullet" height="9" width="9">
+        </div>
+
+    </head>
+    <body>
+        <header>
+            <h1>Bullet Pattern Generator v1.0.0</h1>
+            <nav>
+                <a href="#canvas-container">GAME</a>
+                <a href="#controls">CONTROLS</a>
+                <a href="#p-selector">PATTERN SELECTOR</a>
+            </nav>
+        </header>
+        <main>
+            
+            <div class="canvas-container" id="canvas-container">
+                <canvas id="canvas" width="1000" height="560">ERROR: Canvas can't be displayed</canvas>
+                <section id="controls">
+                    <h2>Movement Controls</h2>
+                    <p>W - Move up</p>
+                    <p>A - Move Left</p>
+                    <p>S - Move Down</p>
+                    <p>D - Move Right</p>
+                    <p>Left/Right Click - Dash</p>
+                </section>
+            </div>
+        
+            <section id="p-selector">
+            </section>
+            <div class="container">
+                <h2>Pattern Selector</h2>
+                    <form id="bullet-type">
+                        <label for="b-type-options">Choose a Bullet Type:</label>
+                        <select id="b-type-options">
+                            <option value="0">Linear Down</option>
+                            <option value="1">Linear Left</option>
+                            <option value="2">Linear Right</option>
+                            <option value="3">Anticlockwise Rotation</option>
+                        </select>
+                    </form>
+                    <a href="#canvas-container"><button value="submit" onclick="reset()">Reset/Replay</button></a>
+                </div>
+        
+
+        </main>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./src/bulletCalculations.js"></script>
+        <script type="text/javascript" src="./src/obstacle.js"></script>
+        <script type="text/javascript" src="./src/player.js"></script>
+        <script type="text/javascript" src="./src/index.js"></script>
+    </body>
+</html>

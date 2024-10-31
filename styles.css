@@ -1,0 +1,100 @@
+*,html {
+    scroll-behavior: smooth;
+    margin:0;
+    padding:0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color:white;
+    color: #39375B;
+    padding: 2vh;
+    border-bottom: 10px solid #39375B;
+}
+
+h1 {
+    margin: none;
+    padding: none;
+}
+
+nav {
+    width:max-content;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    margin:auto;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0 20px 0 20px;
+}
+
+
+body {
+    background-color: #745C97;
+    align-items: center;
+}
+
+main { 
+    margin:auto;
+    justify-content: center;
+    
+}
+
+
+.canvas-container {
+    padding: 12vh 0 4vh 0;
+}
+
+canvas {
+    border: white double 10px;
+    border-radius: 5px;
+    background-color: black;
+    height: 560px;
+    width: 1000px;
+    display:block;
+    margin: 0 auto;
+}
+
+#controls {
+    margin: 1vh auto 0 auto;
+    width: 60vw;
+    border-radius: 10px;
+    border:0.6rem double rgb(223, 198, 244); 
+    background-color: #07061b;
+    color: rgb(223, 198, 244);
+    text-align: center;
+    padding-top: 1vh;
+    display: flex;
+    justify-content: space-around;
+}
+p, label {
+    padding-top: 0.5vh;
+}
+
+.container {
+    color:white;
+    background-color: #07061b;
+    text-align: center;
+    padding: 2rem;
+}
+
+button {
+    margin-top: 2vh;
+    height: 6vh;
+    width: 10vw;
+    background-color: white;
+    color:#745C97;
+    border-radius: 5px;
+    border:4px solid #745C97;
+    font-weight: bold;
+}
+
+button:hover {
+    border-color:#be81c3;
+    color:#be81c3;
+}
