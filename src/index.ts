@@ -8,7 +8,7 @@ let gameOccurrence:boolean = true;
 
 
 let player = new Player();
-let boss = new Enemy(anticlockwiseRotation,[0],degreeIncrementer);
+let boss = new Enemy(anticlockwiseRotation,false,[0,360],degreeIncrementer);
 
 let pressedKeys:{[key:string]:boolean} = {};
 
@@ -46,25 +46,31 @@ const recordUpKeys = (eventKey:string) => {
 function reset():undefined {
     player = new Player();
     let inputValue:number = parseInt(bulletInput.value);
-    console.log(typeof inputValue);
 
     switch (inputValue) {
         case 0:
-            console.log(0);
-            boss = new Enemy(linearDown,[],() => {});
+            boss = new Enemy(linearDown,false,[],() => {});
             break;
         case 1:
-            console.log(1);
-            boss = new Enemy(linearLeft,[],() => {});
+            boss = new Enemy(linearLeft,false,[],() => {});
             break;
         case 2:
-            console.log(2);
-            boss = new Enemy(linearRight,[],() => {});
+            boss = new Enemy(linearRight,false,[],() => {});
             break;
         case 3:
-            console.log(3);
-            boss = new Enemy(anticlockwiseRotation,[0],degreeIncrementer);
+            boss = new Enemy(anticlockwiseRotation,false,[0,360],degreeIncrementer);
             break;
+        case 4:
+            boss = new Enemy(clockwiseRotation,false,[0,360],degreeIncrementer);
+            break;
+        case 5:
+            boss = new Enemy(roseCurve,true,[0,360],degreeIncrementer);
+            break;
+        case 6:
+            boss = new Enemy(archimedesCurve,true,[0,-1],degreeIncrementer);
+            break;
+        case 7:
+            boss = new Enemy(butterflyCurve,true,[0,2160],degreeIncrementer);
         default:
             break;
 

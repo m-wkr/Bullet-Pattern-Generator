@@ -33,6 +33,9 @@ a {
     padding: 0 20px 0 20px;
 }
 
+nav > a:hover {
+    color:#be81c3;
+}
 
 body {
     background-color: #745C97;

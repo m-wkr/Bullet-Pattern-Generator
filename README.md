@@ -9,11 +9,15 @@ This is a recreation of a portion of my 2D "shoot 'em up" NEA, primarily focusse
 
 ## What options are available?
 
-As of v1.0.0, only the original set of bullet traversal options are available. This includes:
+As of v1.0.1, the available bullet patterns include:
 - Linear Down
 - Linear Left
 - Linear Right
 - Anticlockwise Rotation
+- Rose Curve
+- Archimedes' Curve
+- Butterfly Curve
+
 
 ## How to Install
 
@@ -21,5 +25,6 @@ As of v1.0.0, only the original set of bullet traversal options are available. T
 2. Navigate to its directory `cd Bullet-Pattern-Generator`
 3. Install all dependencies `npm install`
 4. Run `npm compile run` to compile all Typescript files into Javascript
+5. Run `start index.html` for Windows, or `open index.html` in mac/linux
 
 Your installation should be complete, now you can open the index.html file in a browser!

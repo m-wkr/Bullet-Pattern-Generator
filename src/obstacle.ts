@@ -13,10 +13,13 @@ class Enemy {
     private _bulletArg:number[];
     private _bulletArgmanager:Function;
 
-    public constructor(bulletFunction:Function,bulletArg:number[],bulletArgManager:Function) {
+    private _fixedPoint:boolean;
+
+    public constructor(bulletFunction:Function,fixedPoint:boolean,bulletArg:number[],bulletArgManager:Function) {
         this._bulletFunction = bulletFunction;
         this._bulletArg = bulletArg;
         this._bulletArgmanager = bulletArgManager;
+        this._fixedPoint = fixedPoint;
     }
 
     public draw(surface:CanvasRenderingContext2D):undefined {
@@ -38,7 +41,7 @@ class Enemy {
 
     public addBullet():undefined {
         if (this._bulletCooldown == 0) {
-            this._bullets.push(new Bullet(this._spawnCoord[0],this._spawnCoord[1],this._bulletFunction,this._bulletArg,this._bulletArgmanager));
+            this._bullets.push(new Bullet(this._spawnCoord[0],this._spawnCoord[1],this._fixedPoint,this._bulletFunction,this._bulletArg,this._bulletArgmanager));
             this._bulletCooldown = 60;
         } else {
             this._bulletCooldown -= 1;
@@ -54,15 +57,20 @@ class Bullet {
     private _y:number 
     private _borders:number[];
 
+    private _origin:number[];
+    private _fixedPoint:boolean;
+
     private _dx:number = 1;
     private _dy:number = 1;
     private _movementFunction:Function;
     private _optionalArgs:number[];
     private _argsUpdater:Function;
 
-    public constructor(x:number,y:number,movementFunction:Function,optionalArgs:number[],argsUpdater:Function) {
+    public constructor(x:number,y:number,fixedPoint:boolean,movementFunction:Function,optionalArgs:number[],argsUpdater:Function) {
         this._x = x;
         this._y = y;
+        this._fixedPoint = fixedPoint
+        this._origin = [x,y]; //Origin tracker
         this._borders = [this._y-(this._height/2),this._x+(this._width/2),this._y+(this._height/2),this._x-(this._width/2)];
         this._movementFunction = movementFunction;
         this._optionalArgs = optionalArgs;
@@ -81,8 +89,14 @@ class Bullet {
     public update():undefined {
         [this._dx,this._dy] = this._movementFunction(this._optionalArgs);
         this._optionalArgs = this._argsUpdater(this._optionalArgs);
-        this._x += this._dx;
-        this._y += this._dy;
+        console.log(this._optionalArgs);
+        if (this._fixedPoint) {
+            this._x = this._dx + this._origin[0];
+            this._y = this._dy + this._origin[1];
+        } else {
+            this._x += this._dx;
+            this._y += this._dy;
+        }
         this._borders = [this._y-(this._height/2),this._x+(this._width/2),this._y+(this._height/2),this._x-(this._width/2)];
     }
 
